@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: truck3-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: truck3
+  template:
+    metadata:
+      labels:
+        app: truck3
+    spec:
+      containers:
+        - name: truck3
+          image: sathwik10/truck3
+          ports:
+            - containerPort: 5000
